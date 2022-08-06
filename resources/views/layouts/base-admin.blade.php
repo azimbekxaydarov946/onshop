@@ -33,8 +33,7 @@
                 <li class="logo-sn waves-effect">
                     <div class="text-center">
                         <a href="#" class="pl-0"><img
-                                src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
-                                class=""></a>
+                                src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" class=""></a>
                     </div>
                 </li>
                 <!--/. Logo -->
@@ -106,27 +105,24 @@
                         ->get()
                         ->count('id');
 
-
                 @endphp
 
                 <li class="nav-item dropdown notifications-nav">
                     <a class="nav-link waves-effect waves-light dark-grey-text font-weight-bold"
-                    href="{{ route('myorder') }}">
-                        <i class="fas fa-bell"></i><span
-                            class="badge red">{{$number}}</span>
+                        href="{{ route('myorder') }}">
+                        <i class="fas fa-bell"></i><span class="badge red">{{ $number }}</span>
                     </a>
 
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i> <span
                             class="clearfix d-none d-sm-inline-block">{{ auth()->user() ? auth()->user()->name : 'none' }}</span></a>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item"
-                            href="{{ route('profile.show') }}">{{ __('main.myaccount') }}</a>
+                        <a class="dropdown-item" href="{{ route('profile.show') }}">{{ __('main.myaccount') }}</a>
                         <a class="dropdown-item" href="{{ route('home') }}">{{ __('main.home') }}</a>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
@@ -160,8 +156,8 @@
                 <!--Card-->
 
 
-                    @yield('content')
-                    {{-- {{ $slot }} --}}
+                @yield('content')
+                {{-- {{ $slot }} --}}
 
                 <!--/.Card-->
 
@@ -175,7 +171,7 @@
     <!--Footer-->
     <footer class="page-footer pt-0 mt-5 rgba-stylish-light">
 
-        <!--Copyright-->
+        {{-- <!--Copyright-->
         <div class="footer-copyright py-3 text-center">
             <div class="container-fluid">
                 © 2018 Copyright: <a href="{{ route('product') }}" target="_blank">
@@ -183,26 +179,29 @@
 
             </div>
         </div>
-        <!--/.Copyright-->
+        <!--/.Copyright--> --}}
         @if (auth()->user()->hasRole('admin'))
+            <!-- Fixed button -->
+            <div class="fixed-action-btn clearfix d-none d-xl-block" style="bottom: 45px; right: 24px;">
+                <a class="btn-floating btn-lg red">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+
+                <ul class="list-unstyled">
+
+
+                    <li><a class="btn-floating red" href="{{ route('product') }}"><i class="fas fa-star"></i></a></li>
+                    <li><a class="btn-floating yellow darken-1" href="{{ route('user') }}"><i
+                                class="fas fa-user"></i></a></li>
+                    <li><a class="btn-floating green" href="{{ route('category') }}"><i
+                                class="fas fa-envelope"></i></a></li>
+
+                    <li><a class="btn-floating blue" href="{{ route('order') }}"><i
+                                class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+        @endif
         <!-- Fixed button -->
-<div class="fixed-action-btn clearfix d-none d-xl-block" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-lg red">
-      <i class="fas fa-pencil-alt"></i>
-    </a>
-
-    <ul class="list-unstyled">
-
-
-        <li><a class="btn-floating red" href="{{ route('product') }}"><i class="fas fa-star"></i></a></li>
-        <li><a class="btn-floating yellow darken-1"  href="{{ route('user') }}"><i class="fas fa-user"></i></a></li>
-        <li><a class="btn-floating green" href="{{ route('category') }}"><i class="fas fa-envelope"></i></a></li>
-
-      <li><a class="btn-floating blue" href="{{ route('order') }}"><i class="fas fa-shopping-cart"></i></a></li>
-    </ul>
-  </div>
-  @endif
-  <!-- Fixed button -->
 
     </footer>
     <!--/.Footer-->

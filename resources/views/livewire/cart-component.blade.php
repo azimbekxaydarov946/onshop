@@ -209,10 +209,10 @@
         <!--Grid row-->
         <div class="row flex-center mb-5">
 
-            <p>
+            {{-- <p>
                 <a class="btn btn-primary btn-rounded mb-5" data-toggle="collapse" href="#collapseExample1"
                     aria-expanded="false" aria-controls="collapseExample1">More carts</a>
-            </p>
+            </p> --}}
             <div class="collapse" id="collapseExample1">
 
                 <!-- Grid row -->

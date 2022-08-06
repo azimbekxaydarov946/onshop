@@ -8,28 +8,28 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use App\Traits\ImageTrait;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     use ImageTrait;
     public function index()
     {
-    $month = [  1=>['January'],	2=>['February'], 3=>['March'], 4=>['April'], 5=>['May'], 6=>['June'], 7=>['July'],
-                8=>['August'], 9=>['September'], 10=>['October'], 11=>['November'],12 =>['December']
-             ];
-        $status = [0=>['Start'],1 => ['  Process'], 2 => ['Finish']];
+        $month = [
+            1 => ['January'],    2 => ['February'], 3 => ['March'], 4 => ['April'], 5 => ['May'], 6 => ['June'], 7 => ['July'],
+            8 => ['August'], 9 => ['September'], 10 => ['October'], 11 => ['November'], 12 => ['December']
+        ];
+        $status = [0 => ['Start'], 1 => ['  Process'], 2 => ['Finish']];
         $product = Product::count('id');
-        $user = User::whereHas('roles', function($q){$q->where('name', 'user'); })->count('id');
+        $user = User::whereHas('roles', function ($q) {
+            $q->where('name', 'user');
+        })->count('id');
         $ordercount = Order::count('id');
         $order = Order::sum('all_price');
-        $orderMonth = Order::select(
-            Order::raw("month(created_at) as Month"),
-            Order::raw("count(id) as count"),
-            Order::raw("sum(all_price) as sum")
-        )
-            ->groupBy(Order::raw("month(created_at)"))->get();;
-        return view('admin.home', ['product' => $product, 'order' => $order, 'user' => $user, 'ordercount' => $ordercount, 'orderMonth' => $orderMonth,'month'=>$month]);
+
+        $orderMonth = DB::select(DB::raw("SELECT date_part('month', created_at) as Month, count(id) as count, sum(all_price) as sum FROM orders GROUP BY date_part('month', created_at)"));
+
+        return view('admin.home', ['product' => $product, 'order' => $order, 'user' => $user, 'ordercount' => $ordercount, 'orderMonth' => $orderMonth, 'month' => $month]);
     }
     public function product()
     {
