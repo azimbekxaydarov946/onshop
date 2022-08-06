@@ -1,5 +1,6 @@
 # Onshop
-#git clone https://github.com/azimbekxaydarov946/onshop.git
+
+git clone https://github.com/azimbekxaydarov946/onshop.git
 
 composer install
 
