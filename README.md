@@ -1,5 +1,7 @@
 # Onshop
 
+it done php 7.3 and laravel 8
+
 git clone https://github.com/azimbekxaydarov946/onshop.git
 
 composer install
