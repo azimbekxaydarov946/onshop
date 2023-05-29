@@ -29,3 +29,13 @@
 |           email         |  password |
 |-------------------------|-----------|
 |      admin@gmail.com    | 12345678  |
+
+## Get fake data for card payment through this link
+```
+https://developer.help.paycom.uz/protokol-subscribe-api
+```
+##OR
+
+|            Kart         |  Expired |
+|-------------------------|----------|
+|      8600495473316478   |   03/99  |
