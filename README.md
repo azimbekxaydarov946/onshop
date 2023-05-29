@@ -18,9 +18,6 @@ php artisan optimize
 
 php artisan route:trans:clear
 
-admin@gmail.com
-12345678
-
 ## To enter the project through fake data
 
 |           email         |  password |
