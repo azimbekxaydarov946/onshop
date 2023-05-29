@@ -1,22 +1,30 @@
 # Onshop
 
-it done php 7.3 and laravel 8
+##it done php 7.3 and laravel 8
 
-git clone https://github.com/azimbekxaydarov946/onshop.git
+<code>git clone https://github.com/azimbekxaydarov946/onshop.git</code>
 
-cd onshop
+<code>cd onshop</code>
 
-composer update
+<code>copy .env.example to .env</code>
 
-php artisan key:generate
+<code>creae db</code>
 
-php artisan migrate
+<code>write db credentials to .env file</code>
 
-php artisan db:seed
+<code>php artisan key:generate</code>
 
-php artisan optimize
+<code>php artisan migrate:fresh</code>
 
-php artisan route:trans:clear
+<code>php artisan db:seed</code>
+
+<code>php artisan storage:link</code>
+
+<code>php artisan optimize</code>
+
+<code>php artisan route:trans:clear</code>
+
+<code>php artisan serve</code>
 
 ## To enter the project through fake data
 
