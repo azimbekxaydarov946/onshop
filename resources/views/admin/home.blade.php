@@ -161,7 +161,7 @@
                             @foreach ($orderMonth as $item)
 
                             <tr>
-                                <td>{{$month[$item->month][0] }}</td>
+                                <td>{{$month[$item->Month][0] }}</td>
                                 <td>{{$item->count}}</td>
                                 <td>{{$item->sum}}$</td>
                             </tr>
