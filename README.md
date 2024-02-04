@@ -12,6 +12,8 @@
 
 <code>write db credentials to .env file</code>
 
+<code>composer update</code>
+
 <code>php artisan key:generate</code>
 
 <code>php artisan migrate:fresh</code>
