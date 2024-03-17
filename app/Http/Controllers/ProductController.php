@@ -27,8 +27,10 @@ class ProductController extends Controller
         $ordercount = Order::count('id');
         $order = Order::sum('all_price');
 
+        $orderMonth = DB::select(DB::raw("SELECT MONTH(created_at) as Month, count(id) as count, sum(all_price) as sum FROM orders GROUP BY MONTH(created_at)"));
+
         // $orderMonth = DB::select(DB::raw("SELECT date_part('month', created_at) as Month, count(id) as count, sum(a>
-        $orderMonth = DB::select(DB::raw("SELECT MONTH(created_at) as Month, COUNT(id) as count, SUM(all_price) as su>
+        // $orderMonth = DB::select(DB::raw("SELECT MONTH(created_at) as Month, COUNT(id) as count, SUM(all_price) as su;
         //dd($month[$orderMonth[0]->Month]);
 
         return view('admin.home', ['product' => $product, 'order' => $order, 'user' => $user, 'ordercount' => $ordercount, 'orderMonth' => $orderMonth, 'month' => $month]);
