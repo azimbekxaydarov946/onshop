@@ -24,6 +24,8 @@
 
 <code>php artisan route:trans:clear</code>
 
+<code>php artisan storage:link</code>
+
 <code>php artisan serve</code>
 
 ## To enter the project through fake data
