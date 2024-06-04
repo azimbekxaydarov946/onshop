@@ -1,6 +1,6 @@
 # Onshop
 
-##it done php 7.3 and laravel 8
+##it done php 8.* and laravel 8
 
 <code>git clone https://github.com/azimbekxaydarov946/onshop.git</code>
 
