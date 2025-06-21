@@ -39,6 +39,14 @@
 <a>https://developer.help.paycom.uz/protokol-subscribe-api</a>
 
 ##OR
+
+|               Kart            |     Expired    |
+|-------------------------------|----------------|
+|      ```8600495473316478```   |   ```03/99```  |
+
+
+
+
 Step by step deploye site on linux server:
 <code>
     0 apt update
@@ -75,9 +83,3 @@ offical sites: https://dev.mysql.com/downloads/repo/apt/
    30  systemctl restart nginx.service 
    31  chown -R www-data:www-data /var/www/onshop/
 </code>
-
-
-
-|               Kart            |     Expired    |
-|-------------------------------|----------------|
-|      ```8600495473316478```   |   ```03/99```  |
