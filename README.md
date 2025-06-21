@@ -48,12 +48,11 @@
 
 
 Step by step deploye site:
+<code>
     0 apt update
     1  apt install nginx
     2  apt install php8.2-fpm php8.2-mysql php8.2-curl phpunit php8.2-mbstring
-
 offical sites: https://dev.mysql.com/downloads/repo/apt/ 
-
     3  wget https://dev.mysql.com/get/mysql-apt-config_0.8.30-1_all.deb
     4  apt install gnupg
     5  dpkg -i mysql-apt-config_0.8.29-1_all.deb 
@@ -81,7 +80,7 @@ offical sites: https://dev.mysql.com/downloads/repo/apt/
    29  php artisan route:trans:clear
    30  systemctl restart nginx.service 
    31  chown -R www-data:www-data /var/www/onshop/
-
+</code>
 
 ACCESS to ADMIN:
 email: admin@gmail.com
@@ -89,7 +88,7 @@ password: 12345678
   
 
 Nginx file:
-
+<code>
 server {
 	listen 80;
 
@@ -115,4 +114,4 @@ server {
 		deny all;
 	}
 }
-
+</code>
