@@ -47,8 +47,7 @@
 
 
 
-Step by step deploye site on linux server:
-<code>
+Step by step deploye site:
     0 apt update
     1  apt install nginx
     2  apt install php8.2-fpm php8.2-mysql php8.2-curl phpunit php8.2-mbstring
@@ -82,4 +81,38 @@ offical sites: https://dev.mysql.com/downloads/repo/apt/
    29  php artisan route:trans:clear
    30  systemctl restart nginx.service 
    31  chown -R www-data:www-data /var/www/onshop/
-</code>
+
+
+ACCESS to ADMIN:
+email: admin@gmail.com
+password: 12345678
+  
+
+Nginx file:
+
+server {
+	listen 80;
+
+	root /var/www/onshop/public;
+
+	index index.php index.html index.htm index.nginx-debian.html;
+
+	server_name 192.168.100.19;
+
+	location / {
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+
+		fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+
+	#	fastcgi_pass 127.0.0.1:9000;
+	}
+
+	location ~ /\.ht {
+		deny all;
+	}
+}
+
